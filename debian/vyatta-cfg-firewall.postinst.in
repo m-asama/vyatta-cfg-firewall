@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 prefix=@prefix@
 exec_prefix=@exec_prefix@
 sysconfdir=@sysconfdir@
@@ -9,12 +11,4 @@ sbindir=@sbindir@
 # add symlinks for sudo
 ln -sf /opt/vyatta/sbin/vyatta-ipset.pl ${bindir}/sudo-users/vyatta-ipset.pl
 
-
-# comply with Squeeze version of modprobe
-# remove old versions of files during upgrade
-for modprobe in vyatta_xt_recent vyatta_sip_options
-do
-  if [ -f /etc/modprobe.d/${modprobe} ]; then
-      mv -f /etc/modprobe.d/${modprobe} /etc/modprobe.d/${modprobe}.conf
-  fi
-done
+exit 0

@@ -16,6 +16,8 @@ debian/tmp
 debian/vyatta-cfg-firewall-serial
 debian/*.debhelper.log
 debian/*.substvars
+debian/.debhelper/
+debian/changelog.*
 scripts/firewall/firewall.init
 INSTALL
 Makefile.in
